@@ -14,6 +14,7 @@ import { QuestionComponent } from 'app/question/question.component';
 import { UserProfileComponent } from 'app/user-profile/user-profile.component';
 import { TableListComponent } from 'app/table-list/table-list.component';
 import { IconsComponent } from 'app/icons/icons.component';
+import { ShowListSongComponent } from 'app/show-list-song/show-list-song.component';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { IconsComponent } from 'app/icons/icons.component';
     UserProfileComponent,
     TableListComponent,
     IconsComponent,
-    QuestionComponent
+    QuestionComponent,
+    ShowListSongComponent
   ]
 })
 

@@ -1,0 +1,37 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">List song mới được add</h4>
+                        <p class="card-category"> Here you are? </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th></th>
+                                    <th>Name</th>
+                                    <th>Mp3</th>
+                                    <th>Author</th>
+                                    <th>Music Type</th>
+                                </thead>
+                                <tbody *ngFor="let i of songs">
+                                    <tr>
+                                        <td><img src={{i.image}} width="70px"></td>
+                                        <td>{{i.name}}</td>
+                                        <td><audio controls><source src={{i.linkMp3}}></audio></td>
+                                        <td>{{i.author}}</td>
+                                        <td>{{i.musicType}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
