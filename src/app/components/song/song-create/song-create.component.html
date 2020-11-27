@@ -1,0 +1,92 @@
+<div>
+  <div>
+    <div *ngIf="message">{{ message }}</div>
+  </div>
+</div>
+
+<div>
+  <div>
+    <h1>Upload Image</h1>
+  </div>
+</div>
+
+<div>
+  <label for="name">Name</label>
+  <input type="text" [(ngModel)]="song.name" name="name" />
+</div>
+<div>
+  <label for="album">Album</label>
+  <input type="text" [(ngModel)]="song.album" name="album" />
+</div>
+<div>
+  <label for="creator">Creator</label>
+  <input type="text" [(ngModel)]="song.creator" name="creator" />
+</div>
+<div>
+  <label for="author">Author</label>
+  <input type="text" [(ngModel)]="song.author" name="author" />
+</div>
+<div>
+  <label for="musicType">Music Type</label>
+  <input type="text" [(ngModel)]="song.musicType" name="musicType" />
+</div>
+
+<div>
+  <label class="sbw_light">Singer</label><br />
+  <select [(ngModel)]="song.singerValues" multiple>
+     <option *ngFor="let singer of singers" [value]="singer.id">{{singer.name}}</option>
+  </select>
+</div>
+
+<div>
+  <label for="musicType">Description</label>
+  <input type="text" [(ngModel)]="song.description" name="description" />
+</div>
+
+<div>
+  <div>
+    <input type="file" (change)="onFileChanged($event)"/>
+  </div>
+  <div>
+  <button type="button" (click)="createSong()" [disabled]="showButton">Save</button>
+  </div>
+</div>
+
+
+<hr/>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Audio</th>
+      <th>Name</th>
+      <th>Album</th>
+      <th>Author</th>
+      <th>Music Type</th>
+      <th>Singer</th>
+
+    </tr>
+  </thead>
+  <tr *ngFor="let song of songs">
+    <th scope="row">{{ song.id }}</th>
+    <td>
+      <audio controls>
+        <source src="{{ song.linkMp3 }}" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </td>
+    <td scope="row">{{ song.name }}</td>
+    <td scope="row">{{ song.album }}</td>
+    <td scope="row">{{ song.author }}</td>
+    <td scope="row">{{ song.musicType }}</td>
+    <td scope="row">{{ song.musicType }}</td>
+  </tr>
+</table>
+<div class="container row">
+  <div class="col-md-12">
+    <div *ngIf="retrievedImage">
+      <img [src]="retrievedImage" />
+    </div>
+  </div>
+</div>
