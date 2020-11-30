@@ -8,21 +8,21 @@ import { LoginComponent } from './login/login.component';
 import { AdminLayoutComponent } from './layouts/admin-layout.component';
 
 const routes: Routes =[
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
-  }, {
-    path: 'login',
-    component: LoginComponent,
-  }, {
-    path: '',
-    component: AdminLayoutComponent,
-    children: [{
-      path: '',
-      loadChildren: './layouts/admin-layout.module#AdminLayoutModule'
-    }]
-  }
+  // {
+  //   path: '',
+  //   redirectTo: 'login',
+  //   pathMatch: 'full',
+  // }, {
+  //   path: 'login',
+  //   component: LoginComponent,
+  // }, {
+  //   path: '',
+  //   component: AdminLayoutComponent,
+  //   children: [{
+  //     path: '',
+  //     loadChildren: './layouts/admin-layout.module#AdminLayoutModule'
+  //   }]
+  // }
 ];
 
 @NgModule({

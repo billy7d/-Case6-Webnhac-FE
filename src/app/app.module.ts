@@ -14,6 +14,7 @@ import {
 } from '@agm/core'; 
 import { LoginComponent } from './login/login.component'; 
 import { AdminLayoutComponent } from './layouts/admin-layout.component';
+import { SongCreateComponent } from './components/song/song-create/song-create.component';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    LoginComponent
+    LoginComponent,
+    SongCreateComponent
 
   ],
   providers: [],
