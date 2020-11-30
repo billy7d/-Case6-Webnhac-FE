@@ -17,14 +17,30 @@ export class ShowListSongComponent implements OnInit {
     musicType: "",
     album: ""
   };
+  playlist: any = {
+    name:"",
+    musicType: "",
+    description: "",
+    songQuantity: "",
+    dateCreated:"",
+    view:Number
+  }
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.getAllSong();
+    this.getAllPlaylist();
   }
 getAllSong(){
   debugger
   this.http.get("http://localhost:8080/songs/newSong")
-  .subscribe(res => { this.songs= res;}, err => {  window.alert("Sai rồi bạn!")})
+  .subscribe(res => {debugger
+      this.songs= res;}, err => {  window.alert("Sai rồi bạn!")})
+}
+getAllPlaylist(){
+  debugger
+  this.http.get("http://localhost:8080/playlists/newPlaylist")
+  .subscribe(res => {debugger
+     this.playlist= res;}, err => {  window.alert("Sai rồi bạn!")})
 }
 }

@@ -15,6 +15,7 @@ import {
 import { LoginComponent } from './login/login.component'; 
 import { AdminLayoutComponent } from './layouts/admin-layout.component';
 import { ShowListSongComponent } from './show-list-song/show-list-song.component';
+import { AddSingerComponent } from './add-singer/add-singer.component';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { ShowListSongComponent } from './show-list-song/show-list-song.component
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    LoginComponent
+    LoginComponent,
+    AddSingerComponent
 
   ],
   providers: [],

@@ -32,6 +32,36 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title mt-0"> Play list được nghe nhiều nhất</h4>
+                        <p class="card-category"> Here is a subtitle for this table</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="">
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Music type </th>
+                                    <th>Description</th>
+                                    <th>dateCreated</th>
+                                </thead>
+                                <tbody *ngFor="let a of playlist, index as i">
+                                    <tr>
+                                        <td>{{i+1}}</td>
+                                        <td>{{a.name}}</td>
+                                        <td>{{a.musicType}}</td>
+                                        <td>{{a.description}}</td>
+                                        <td>{{a.dateCreated}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

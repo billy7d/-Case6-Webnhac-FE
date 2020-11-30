@@ -15,6 +15,7 @@ import { UserProfileComponent } from 'app/user-profile/user-profile.component';
 import { TableListComponent } from 'app/table-list/table-list.component';
 import { IconsComponent } from 'app/icons/icons.component';
 import { ShowListSongComponent } from 'app/show-list-song/show-list-song.component';
+import { AddSingerComponent } from 'app/add-singer/add-singer.component';
 
 @NgModule({
   imports: [
