@@ -22,6 +22,7 @@ export class SongCreateComponent implements OnInit {
     musicType: '',
     description:'',
     linkMp3: '',
+    linkImg:'',
   };
 
   selectedFile: File;
@@ -54,24 +55,49 @@ export class SongCreateComponent implements OnInit {
   }
 
 
-  onFileChanged(event) {
+  onFileChangedMp3(event) {
     this.selectedFile = event.target.files[0];
 
-    const uploadImageData = new FormData();
-    uploadImageData.append(
-      'imageFile',
+    const uploadSongData = new FormData();
+    uploadSongData.append(
+      'songFile',
       this.selectedFile,
       this.selectedFile.name
     );
 
     this.httpClient
-      .post('http://localhost:8080/songs/uploadmp3', uploadImageData, {  observe: 'response',
+      .post('http://localhost:8080/songs/uploadmp3', uploadSongData, {  observe: 'response',
       responseType: "json"
       })
       .subscribe((res) => {
         if (res.status === 200) {
+
           this.song.linkMp3 = res.body.linkMp3;
           this.showButton = false;
+        }
+      }),((err) =>{});
+  }
+
+
+  onFileChangedAva(event) {
+    this.selectedFile = event.target.files[0];
+
+    const uploadImgData = new FormData();
+    uploadImgData.append(
+      'imgFile',
+      this.selectedFile,
+      this.selectedFile.name
+    );
+
+    this.httpClient
+      .post('http://localhost:8080/songs/uploadava', uploadImgData, {  observe: 'response',
+      responseType: "json"
+      })
+      .subscribe((res) => {
+        if (res.status === 200) {
+          debugger
+          this.song.linkImg = res.body.linkImg;
+
         }
       }),((err) =>{});
   }

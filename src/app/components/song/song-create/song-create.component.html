@@ -12,7 +12,7 @@
 
 <div>
   <label for="name">Name</label>
-  <input type="text" [(ngModel)]="song.name" name="name" />
+  <input type="text" [(ngModel)]="song.name" name="name" required />
 </div>
 <div>
   <label for="album">Album</label>
@@ -32,20 +32,27 @@
 </div>
 
 <div>
+  <label for="musicType">Description</label>
+  <input type="text" [(ngModel)]="song.description" name="description" />
+</div>
+
+<div>
   <label class="sbw_light">Singer</label><br />
   <select [(ngModel)]="song.singerValues" multiple>
      <option *ngFor="let singer of singers" [value]="singer.id">{{singer.name}}</option>
   </select>
 </div>
 
-<div>
-  <label for="musicType">Description</label>
-  <input type="text" [(ngModel)]="song.description" name="description" />
-</div>
+
 
 <div>
   <div>
-    <input type="file" (change)="onFileChanged($event)"/>
+    Img:
+    <input type="file" (change)="onFileChangedAva($event)"/>
+  </div>
+  <div>
+    Song:
+    <input type="file" (change)="onFileChangedMp3($event)"/>
   </div>
   <div>
   <button type="button" (click)="createSong()" [disabled]="showButton">Save</button>
@@ -80,7 +87,9 @@
     <td scope="row">{{ song.album }}</td>
     <td scope="row">{{ song.author }}</td>
     <td scope="row">{{ song.musicType }}</td>
-    <td scope="row">{{ song.musicType }}</td>
+    <td>
+      <img src="{{ song.linkImg }}" width="200" height="200">
+    </td>
   </tr>
 </table>
 <div class="container row">
