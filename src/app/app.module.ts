@@ -33,7 +33,7 @@ import { SongCreateComponent } from './components/song/song-create/song-create.c
     AppComponent,
     AdminLayoutComponent,
     LoginComponent,
-    SongCreateComponent
+    
 
   ],
   providers: [],
