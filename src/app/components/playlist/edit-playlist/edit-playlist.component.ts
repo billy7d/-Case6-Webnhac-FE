@@ -14,7 +14,10 @@ export class EditPlaylistComponent implements OnInit {
   playlist:any = {
     name: '',
     musicType: '',
-    description:''
+    description:'',
+    songQuantity:[],
+    view:''
+
   };
 
 

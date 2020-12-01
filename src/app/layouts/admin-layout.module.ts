@@ -1,3 +1,4 @@
+import { SongCreateComponent } from './../components/song/song-create/song-create.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -32,7 +33,8 @@ import { IconsComponent } from 'app/icons/icons.component';
     UserProfileComponent,
     TableListComponent,
     IconsComponent,
-    QuestionComponent
+    QuestionComponent,
+    SongCreateComponent
   ]
 })
 

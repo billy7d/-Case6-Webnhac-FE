@@ -72,7 +72,7 @@ export class SongCreateComponent implements OnInit {
       .subscribe((res) => {
         if (res.status === 200) {
 
-          this.song.linkMp3 = res.body.linkMp3;
+          // this.song.linkMp3 = res.body.linkMp3;
           this.showButton = false;
         }
       }),((err) =>{});
@@ -95,8 +95,8 @@ export class SongCreateComponent implements OnInit {
       })
       .subscribe((res) => {
         if (res.status === 200) {
-          debugger
-          this.song.linkImg = res.body.linkImg;
+          
+          // this.song.linkImg = res.body.linkImg;
 
         }
       }),((err) =>{});
@@ -107,7 +107,7 @@ export class SongCreateComponent implements OnInit {
     this.httpClient
       .post('http://localhost:8080/songs/create', this.song)
       .subscribe((res) => {
-        debugger;
+       
         this.getAllSong();
       });
   }
