@@ -1,37 +1,68 @@
-<form>
-    <div class="form-group">
-      <label for="Name">Name</label>
-      <input type="text" class="form-control" [(ngModel)]="singer.name" name="name" minlength="3" maxlength="30" required >
-      
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Create song</h4>
+                        <p class="card-category">Complete your profile</p>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Name:</label>
+                                    <input [(ngModel)]="singer.name" name="name" type="text" minlength="3" maxlength="30" required>
+                                  
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="radio" id="male" name="gender" [(ngModel)]="singer.gender" value="male">
+                                    <label for="male">Male</label>
+                                    <input type="radio" id="female" name="gender" [(ngModel)]="singer.gender" value="female">
+                                    <label for="female">Female</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="birthday">Birthday:</label>
+                                    <input type="date" [(ngModel)]="singer.birthday" id="birthday" name="birthday" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="musictype">Music type:</label>
+                                    <input type="text" matInput name="music" minlength="3" maxlength="30" required [(ngModel)]="singer.musicType" id="musictype" >
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="story">Story</label>
+                                    <textarea name="story" minlength="3" required [(ngModel)]="singer.story" rows="4" cols="50"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="band">Band:</label>
+                                    <input type="text" matInput [(ngModel)]="singer.band" name="band" minlength="3" maxlength="30" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="cars">Choose the song:</label>
+                                    <select name=”songList” [(ngModel)]="singer.tuan" multiple required>
+                                        <option *ngFor="let so of song" value={{so.id}}>{{so.name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button mat-raised-button type="submit" (click)="onclickAdd()" class="btn btn-primary">Create Song</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <input type="radio" id="male" name="gender" [(ngModel)]="singer.gender" value="male">
-        <label for="male">Male</label><br>
-        <input type="radio" id="female" name="gender" [(ngModel)]="singer.gender" value="female">
-        <label for="female">Female</label>
-    </div>
-    <div class="form-group">
-        <label for="birthday">Birthday:</label>
-    <input type="date" [(ngModel)]="singer.birthday" id="birthday" name="birthday" required>
-    </div>
-    <div class="form-group">
-        <label for="musictype">Music type</label>
-        <input type="text" class="form-control" name="music" minlength="3" maxlength="30" required [(ngModel)]="singer.musicType" id="musictype" >
-    </div>
-      <div class="form-group">
-        <label for="story">Story</label>
-        <textarea name="story" minlength="3" required [(ngModel)]="singer.story" rows="4" cols="50"></textarea>
-    </div>
-    <div>
-        <label for="band">Band</label>
-        <input type="text" class="form-control" [(ngModel)]="singer.band" name="band" minlength="3" maxlength="30" required>
-    </div>
-    <div>
-        <label for="cars">Choose a song:</label>
-        <select name=”songList” [(ngModel)]="singer.tuan" multiple required>
-            <option *ngFor="let so of song" value={{so.id}}>{{so.name}}</option>
-         </select>
-    </div>
-    <!-- <p style="color: red;">{{messageError}}</p> -->
-    <button type="submit" (click)="onclickAdd()" class="btn btn-primary">Submit</button>
-  </form>
+  </div>
+  

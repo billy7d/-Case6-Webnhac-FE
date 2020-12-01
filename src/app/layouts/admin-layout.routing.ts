@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { AddSingerComponent } from 'app/add-singer/add-singer.component';
+import { LoginComponent } from 'app/login/login.component';
  
  
 import { QuestionComponent } from 'app/question/question.component';
@@ -12,5 +13,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'table-list',     component: TableListComponent },
     { path: 'question',     component: QuestionComponent },
     { path: 'show-list-song', component:ShowListSongComponent},
-    {path:'add-singer', component:AddSingerComponent}
+    {path:'add-singer', component:AddSingerComponent},
+    {path:'login', component:LoginComponent}
 ];
