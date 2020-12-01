@@ -1,3 +1,4 @@
+import { EditPlaylistComponent } from './../components/playlist/edit-playlist/edit-playlist.component';
 import { SongCreateComponent } from './../components/song/song-create/song-create.component';
 import { Routes } from '@angular/router';
  
@@ -10,5 +11,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },
     { path: 'question',     component: QuestionComponent },
-    { path: 'createSong', component: SongCreateComponent}
+    { path: 'createSong', component: SongCreateComponent},
+    { path: 'editPlaylist', component:EditPlaylistComponent}
 ];

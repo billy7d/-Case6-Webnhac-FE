@@ -10,6 +10,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EditPlaylistComponent implements OnInit {
 
 
+  
+  songs: any ={
+  };
+
   idPlaylist:number;
   playlist:any = {
     name: '',
@@ -27,6 +31,8 @@ export class EditPlaylistComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.getPlaylistById(this.idPlaylist);
+    this.getAllSong();
   }
 
   getPlaylistById(id) {
@@ -38,6 +44,13 @@ export class EditPlaylistComponent implements OnInit {
 
   }
 
+  getAllSong(){
+    this.playlistService.getAllSong()
+    .then(res =>{
+      this.songs = res;
+    },err =>window.alert("has error"));
+  }
+
   editPlaylist(id){
     this.playlistService.updatePlaylist(id,this.playlist)
     .then(res => {
@@ -45,5 +58,7 @@ export class EditPlaylistComponent implements OnInit {
       // this.router.navigateByUrl('/playlists');
     }, error => window.alert('errorr'));
   }
+
+
 
 }

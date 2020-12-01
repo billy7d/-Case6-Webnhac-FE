@@ -12,20 +12,29 @@
   </thead>
   <tbody>
   <tr>
-    <td><input type="text" [(ngModel)]="playlist.name" required ngModel name="name" #name="ngModel"></td>
+    <td><input type="text" [(ngModel)]="playlist.name" required name="name" ></td>
 
 
-    <td><input type="text" [(ngModel)]="playlist.musicType" required ngModel name="musicType" #musicType="ngModel"></td>
+    <td><input type="text" [(ngModel)]="playlist.musicType" required  name="musicType" ></td>
 
 
-    <td><input type="text" [(ngModel)]="playlist.description" required  ngModel name="description" #description="ngModel"></td>
+    <td><input type="text" [(ngModel)]="playlist.description" required  name="description" ></td>
 
+    <td><input type="text" [(ngModel)]="playlist.description" required  name="description"></td>
 
+    
+    <div>
+      <label class="sbw_light">Song of Playlist</label><br />
+      <select [(ngModel)]="playlist.songQuantity" multiple>
+         <option *ngFor="let song of songs" [value]="song.id">{{song.name}}</option>
+      </select>
+    </div>
+    
     <td><button class="btn btn-secondary" (click)="editPlaylist(playlist.id)">Update</button></td>
   </tr>
   </tbody>
 </table>
-
+<!-- 
 <div *ngIf="name.errors?.required">
   Name is required
 </div>
@@ -34,6 +43,6 @@
 </div>
 <div *ngIf="description.errors?.required">
   Description is required
-</div>
+</div> -->
 
 
