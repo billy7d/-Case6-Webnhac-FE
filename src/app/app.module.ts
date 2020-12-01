@@ -19,12 +19,14 @@ import { AdminLayoutComponent } from './layouts/admin-layout.component';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
+    
     HttpClientModule,
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
@@ -33,6 +35,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout.component';
     AppComponent,
     AdminLayoutComponent,
     LoginComponent,
+    
     
 
   ],
