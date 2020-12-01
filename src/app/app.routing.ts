@@ -15,6 +15,7 @@ const routes: Routes =[
   // }, {
   //   path: 'login',
   //   component: LoginComponent,
+<<<<<<< HEAD
   // },
   {
     path: '',
@@ -24,6 +25,16 @@ const routes: Routes =[
       loadChildren: './layouts/admin-layout.module#AdminLayoutModule'
     }]
   }
+=======
+  // }, {
+  //   path: '',
+  //   component: AdminLayoutComponent,
+  //   children: [{
+  //     path: '',
+  //     loadChildren: './layouts/admin-layout.module#AdminLayoutModule'
+  //   }]
+  // }
+>>>>>>> 1bd3d5d98dd06796bac9b53be4295c077f27e2c8
 ];
 
 @NgModule({
