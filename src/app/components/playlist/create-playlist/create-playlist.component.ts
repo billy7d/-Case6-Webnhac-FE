@@ -13,6 +13,8 @@ export class CreatePlaylistComponent implements OnInit {
   };
 
   idPlaylist:number;
+
+  listIdSong:[];
  
   playlist:any = {
     name: '',
@@ -53,10 +55,24 @@ export class CreatePlaylistComponent implements OnInit {
 
   createPlaylist(){
     debugger
+    for (const i in this.listIdSong) {
+     let songToAdd = {"id":parseInt(i)}
+     this.playlist.songQuantity.push(songToAdd);
+    }
     this.playlistService.createPlaylist(this.playlist)
     .then(res => {
-      this.playlist = res;
-      // this.router.navigateByUrl('/playlists');
-    }, error => window.alert('errorr'));
+      window.alert("add success")
+      // this.playlist = res;
+      this.listIdSong = null;
+      this.playlist.songQuantity=null;
+      window.location.reload();
+      
+     
+    }).catch(err =>{
+      window.alert("error");
+      this.listIdSong = null;
+      this.playlist.songQuantity=null;
+  
+    });
   }
 }

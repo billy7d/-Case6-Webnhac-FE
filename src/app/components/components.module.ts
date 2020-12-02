@@ -15,8 +15,7 @@ import { CreatePlaylistComponent } from './playlist/create-playlist/create-playl
   declarations: [
     FooterComponent,
     NavbarComponent,
-    SidebarComponent,
-    CreatePlaylistComponent
+    SidebarComponent
   ],
   exports: [
     FooterComponent,

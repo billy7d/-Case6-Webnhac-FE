@@ -1,3 +1,4 @@
+import { CreatePlaylistComponent } from './../components/playlist/create-playlist/create-playlist.component';
 import { SongCreateComponent } from './../components/song/song-create/song-create.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -34,7 +35,8 @@ import { IconsComponent } from 'app/icons/icons.component';
     TableListComponent,
     IconsComponent,
     QuestionComponent,
-    SongCreateComponent
+    SongCreateComponent,
+    CreatePlaylistComponent
   ]
 })
 
