@@ -14,7 +14,9 @@ import {
 } from '@agm/core'; 
 import { LoginComponent } from './login/login.component'; 
 import { AdminLayoutComponent } from './layouts/admin-layout.component';
-import { SongCreateComponent } from './components/song/song-create/song-create.component';
+import { AddSingerComponent } from './add-singer/add-singer.component';
+import { AddPlaylistComponent } from './add-playlist/add-playlist.component';
+import { ShowCreatorPlaylistComponent } from './show-creator-playlist/show-creator-playlist.component';
 
 @NgModule({
   imports: [
@@ -33,7 +35,9 @@ import { SongCreateComponent } from './components/song/song-create/song-create.c
     AppComponent,
     AdminLayoutComponent,
     LoginComponent,
-    
+    // AddSingerComponent,
+    // AddPlaylistComponent,
+    // ShowCreatorPlaylistComponent
 
   ],
   providers: [],

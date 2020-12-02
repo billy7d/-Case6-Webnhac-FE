@@ -15,6 +15,11 @@ import { QuestionComponent } from 'app/question/question.component';
 import { UserProfileComponent } from 'app/user-profile/user-profile.component';
 import { TableListComponent } from 'app/table-list/table-list.component';
 import { IconsComponent } from 'app/icons/icons.component';
+import { ShowListSongComponent } from 'app/show-list-song/show-list-song.component';
+import { AddSingerComponent } from 'app/add-singer/add-singer.component';
+import { AddPlaylistComponent } from 'app/add-playlist/add-playlist.component';
+import { ShowCreatorPlaylistComponent } from 'app/show-creator-playlist/show-creator-playlist.component';
+import { EditPlaylistComponent } from 'app/components/playlist/edit-playlist/edit-playlist.component';
 
 @NgModule({
   imports: [
@@ -34,7 +39,14 @@ import { IconsComponent } from 'app/icons/icons.component';
     TableListComponent,
     IconsComponent,
     QuestionComponent,
-    SongCreateComponent
+    ShowListSongComponent,
+    ShowCreatorPlaylistComponent,
+    SongCreateComponent,
+    EditPlaylistComponent,
+    AddPlaylistComponent,
+    AddSingerComponent,
+    
+
   ]
 })
 
