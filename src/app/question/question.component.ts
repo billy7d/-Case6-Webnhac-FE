@@ -8,7 +8,7 @@ import { TokenStorageService } from 'app/_services/token-storage.service';
   styleUrls: ['./question.component.css']
 })
 export class QuestionComponent implements OnInit {
-
+  link : any;
   songs: any ={
     name: "",
     description: "",
@@ -36,14 +36,12 @@ export class QuestionComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllSong();
-    this.currentUser = this.token.getUser();
-    
+    this.currentUser = this.token.getUser(); 
   }
-  getAllSong(){
-    debugger
+ 
+  getAllSong(){ 
     this.http.get("http://localhost:8080/songs")
-    .subscribe(res => {
-      debugger
+    .subscribe(res => { 
       this.songs= res;
       var max= this.songs[0].view
       for (const i in this.songs) {
@@ -51,6 +49,7 @@ export class QuestionComponent implements OnInit {
           this.songses= this.songs[parseInt(i)]
         }
      }
+     this.link = this.songses.linkMp3;
     }, err => {  window.alert("Sai rồi bạn!")})
   }
  

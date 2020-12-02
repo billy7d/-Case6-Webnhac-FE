@@ -17,9 +17,12 @@ import { AdminLayoutComponent } from './layouts/admin-layout.component';
 import { AddSingerComponent } from './add-singer/add-singer.component';
 import { AddPlaylistComponent } from './add-playlist/add-playlist.component';
 import { ShowCreatorPlaylistComponent } from './show-creator-playlist/show-creator-playlist.component';
+import { RegisterComponent } from './register/register.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [
+    BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
@@ -35,9 +38,7 @@ import { ShowCreatorPlaylistComponent } from './show-creator-playlist/show-creat
     AppComponent,
     AdminLayoutComponent,
     LoginComponent,
-    // AddSingerComponent,
-    // AddPlaylistComponent,
-    // ShowCreatorPlaylistComponent
+    RegisterComponent
 
   ],
   providers: [],
