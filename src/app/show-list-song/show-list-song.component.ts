@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { TokenStorageService } from 'app/_services/token-storage.service';
 
 @Component({
   selector: 'app-show-list-song',
@@ -25,11 +26,13 @@ export class ShowListSongComponent implements OnInit {
     dateCreated:"",
     view:Number
   }
-  constructor(private http: HttpClient) { }
+  currentUser: any;
+  constructor(private http: HttpClient,private token: TokenStorageService) { }
 
   ngOnInit(): void {
     this.getAllSong();
     this.getAllPlaylist();
+    this.currentUser = this.token.getUser();
   }
 getAllSong(){
   debugger

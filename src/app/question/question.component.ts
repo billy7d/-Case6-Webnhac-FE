@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { TokenStorageService } from 'app/_services/token-storage.service';
 
 @Component({
   selector: 'app-question',
@@ -30,12 +31,12 @@ export class QuestionComponent implements OnInit {
     album: "",
     view:Number
   };
- 
-  constructor(private http: HttpClient) { }
+  currentUser: any;
+  constructor(private http: HttpClient,private token: TokenStorageService) { }
 
   ngOnInit(): void {
     this.getAllSong();
-  
+    this.currentUser = this.token.getUser();
     
   }
   getAllSong(){

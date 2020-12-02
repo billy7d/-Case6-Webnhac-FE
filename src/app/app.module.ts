@@ -16,6 +16,8 @@ import { LoginComponent } from './login/login.component';
 import { AdminLayoutComponent } from './layouts/admin-layout.component';
 import { ShowListSongComponent } from './show-list-song/show-list-song.component';
 import { AddSingerComponent } from './add-singer/add-singer.component';
+import { AddPlaylistComponent } from './add-playlist/add-playlist.component';
+import { ShowCreatorPlaylistComponent } from './show-creator-playlist/show-creator-playlist.component';
 
 @NgModule({
   imports: [
@@ -34,7 +36,9 @@ import { AddSingerComponent } from './add-singer/add-singer.component';
     AppComponent,
     AdminLayoutComponent,
     LoginComponent,
-    AddSingerComponent
+    AddSingerComponent,
+    AddPlaylistComponent,
+    ShowCreatorPlaylistComponent
 
   ],
   providers: [],

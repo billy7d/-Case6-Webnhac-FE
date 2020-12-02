@@ -16,6 +16,8 @@ import { TableListComponent } from 'app/table-list/table-list.component';
 import { IconsComponent } from 'app/icons/icons.component';
 import { ShowListSongComponent } from 'app/show-list-song/show-list-song.component';
 import { AddSingerComponent } from 'app/add-singer/add-singer.component';
+import { AddPlaylistComponent } from 'app/add-playlist/add-playlist.component';
+import { ShowCreatorPlaylistComponent } from 'app/show-creator-playlist/show-creator-playlist.component';
 
 @NgModule({
   imports: [
@@ -35,7 +37,8 @@ import { AddSingerComponent } from 'app/add-singer/add-singer.component';
     TableListComponent,
     IconsComponent,
     QuestionComponent,
-    ShowListSongComponent
+    ShowListSongComponent,
+    // ShowCreatorPlaylistComponent
   ]
 })
 

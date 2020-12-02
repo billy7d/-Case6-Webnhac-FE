@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TokenStorageService } from 'app/_services/token-storage.service';
 
 @Component({
   selector: 'app-add-singer',
@@ -20,11 +21,13 @@ export class AddSingerComponent implements OnInit {
     view: "",
     valuesSong:""
   }
+  currentUser: any;
   song: any= [];
-  constructor(private router: Router,private fb: FormBuilder, private http:HttpClient) { }
+  constructor(private router: Router,private fb: FormBuilder, private http:HttpClient,private token: TokenStorageService) { }
 
   ngOnInit(): void {
     this.getAllSong();
+    this.currentUser = this.token.getUser();
   }
   getAllSong(){
     debugger
