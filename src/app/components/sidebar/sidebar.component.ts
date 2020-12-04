@@ -14,7 +14,8 @@ export const ROUTES: RouteInfo[] = [
     { path: '/question', title: 'Hit song',  icon:'content_paste', class: '' },
     { path: '/show-list-song', title: 'Song List',  icon:'content_paste', class: '' },
     { path: '/add-playlist', title: 'Add playlist',icon:'content_paste', class: ''},
-    { path:'/show-playlist', title:'Show playlist',icon:'content_paste', class: ''}
+    { path:'/show-playlist', title:'Show playlist',icon:'content_paste', class: ''},
+    { path:'/createSinger',title:'Create Singer',icon:'person', class: '' }
 ];
 
 @Component({

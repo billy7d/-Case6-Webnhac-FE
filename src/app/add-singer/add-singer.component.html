@@ -1,7 +1,8 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-header card-header-danger">
                         <h4 class="card-title">Create song</h4>
@@ -12,42 +13,50 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <label>Name:</label>
-                                    <input [(ngModel)]="singer.name" name="name" type="text" minlength="3" maxlength="30" required>
+                                    <input [(ngModel)]="singer.name" style="width: 225px; margin-left: 40px;" name="name" type="text" minlength="3" maxlength="30" required>
                                   
                                 </div>
                             </div>
+                            <br>
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-2"><label>Gender:</label></div>
+                                <div class="col-md-10">
+                                    
                                     <input type="radio" id="male" name="gender" [(ngModel)]="singer.gender" value="male">
                                     <label for="male">Male</label>
                                     <input type="radio" id="female" name="gender" [(ngModel)]="singer.gender" value="female">
                                     <label for="female">Female</label>
                                 </div>
                             </div>
+                            <br>
                             <div class="row">
                                 <div class="col-md-12">
                                     <label for="birthday">Birthday:</label>
-                                    <input type="date" [(ngModel)]="singer.birthday" id="birthday" name="birthday" required>
+                                    <input type="date" style="width: 225px;margin-left: 25px;" [(ngModel)]="singer.birthday" id="birthday" name="birthday" required>
                                 </div>
                             </div>
+                            <br>
                             <div class="row">
                                 <div class="col-md-12">
                                     <label for="musictype">Music type:</label>
-                                    <input type="text" matInput name="music" minlength="3" maxlength="30" required [(ngModel)]="singer.musicType" id="musictype" >
+                                    <input type="text" matInput style="width: 225px;margin-left: 8px;" name="music" minlength="3" maxlength="30" required [(ngModel)]="singer.musicType" id="musictype" >
                                 </div>
                             </div>
+                            <br>
                             <div class="row">
                                 <div class="col-md-12">
                                     <label for="story">Story</label>
-                                    <textarea name="story" minlength="3" required [(ngModel)]="singer.story" rows="4" cols="50"></textarea>
+                                    <textarea name="story" style="width: 225px; margin-left: 46px;" minlength="3" required [(ngModel)]="singer.story" rows="4" cols="50"></textarea>
                                 </div>
                             </div>
+                            <br>
                             <div class="row">
                                 <div class="col-md-12">
                                     <label for="band">Band:</label>
-                                    <input type="text" matInput [(ngModel)]="singer.band" name="band" minlength="3" maxlength="30" required>
+                                    <input type="text" style="width: 225px; margin-left: 42px; " matInput [(ngModel)]="singer.band" name="band" minlength="3" maxlength="30" required>
                                 </div>
                             </div>
+                            <br>
                             <div class="row">
                                 <div class="col-md-12">
                                     <label for="cars">Choose the song:</label>
@@ -56,12 +65,25 @@
                                     </select>
                                 </div>
                             </div>
-                            <button mat-raised-button type="submit" (click)="onclickAdd()" class="btn btn-primary">Create Song</button>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="avatar">Choose Avatar:</label>
+                                    <div><input style="width: 225px;" type="file" (change)="onFileChangedAva($event)"/></div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="tuan">Thông báo: {{tuan}}</label>
+                                </div>
+                            </div>
+                            <button mat-raised-button type="submit" (click)="onclickAdd()" [disabled]="showButton" class="btn btn-primary">Create Singer</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>
                 </div>
             </div>
+            <div class="col-md-3"></div>
         </div>
     </div>
   </div>

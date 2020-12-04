@@ -1,7 +1,8 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+           <div  class="col-md-3"></div>
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-header card-header-danger">
                         <h4 class="card-title">Create Playlist</h4>
@@ -12,35 +13,52 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <label>Name playlist:</label>
-                                    <input [(ngModel)]="playlist.name" name="name" type="text" minlength="3" maxlength="30" required>
+                                    <input [(ngModel)]="playlist.name" style="margin-left: 40px; width: 200px;" name="name" type="text" minlength="3" maxlength="30" required>
                                 </div>
                             </div>
+                            <br>
                             <div class="row">
                                 <div class="col-md-12">
                                     <label for="musictype">Music type playlist:</label>
-                                    <input type="text" matInput name="music" minlength="3" maxlength="30" required [(ngModel)]="playlist.musicType" id="musictype" >
+                                    <input type="text" matInput name="music" style="margin-left: 9px;width: 200px;" minlength="3" maxlength="30" required [(ngModel)]="playlist.musicType" id="musictype" >
                                 </div>
                             </div>
+                            <br>
                             <div class="row">
                                 <div class="col-md-12">
                                     <label for="description">Description playlist</label>
-                                    <textarea name="description" minlength="3" required [(ngModel)]="playlist.description" rows="4" cols="50"></textarea>
+                                    <textarea name="description" minlength="3" style="margin-left: 10px; width: 200px;" required [(ngModel)]="playlist.description" rows="4"></textarea>
                                 </div>
                             </div>
+                            <br>
                             <div class="row">
                                 <div class="col-md-12">
                                     <label for="cars">Choose the song:</label>
-                                    <select name=”songList” [(ngModel)]="listIds" multiple required>
+                                    <select name=”songList” style="width: 200px;margin-left: 20px;" [(ngModel)]="listIds" multiple required>
                                         <option *ngFor="let so of song" value={{so.id}}>{{so.name}}</option>
                                     </select>
                                 </div>
                             </div>
-                            <button mat-raised-button type="submit" (click)="onclickAdd()" class="btn btn-primary">Create playlist</button>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="avatar">Choose Avatar:</label>
+                                    <input style="width: 200px;margin-left: 33px;" type="file" (change)="onFileChangedAva($event)"/>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="tuan">Thông báo: {{tuan}}</label>
+                                </div>
+                            </div>
+                            <button mat-raised-button type="submit" (click)="onclickAdd()" [disabled]="showButton"  class="btn btn-primary">Create playlist</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>
                 </div>
             </div>
+            <div  class="col-md-3"></div>
         </div>
     </div>
   </div>
